@@ -1,0 +1,200 @@
+:root {
+  --color-emerald-dark: #051410;
+  --color-emerald-deep: #08211B;
+  --color-emerald-card: #0D2D25;
+  --color-emerald-light: #133D33;
+  --color-near-black: #060908;
+  
+  --color-gold: #D4AF37;
+  --color-gold-light: #E5C76B;
+  --color-gold-dark: #A88624;
+  --color-gold-muted: rgba(212, 175, 55, 0.25);
+  
+  --color-ivory: #FAF7F2;
+  --color-ivory-card: #F4EFE6;
+  --color-ivory-border: #E8E0D2;
+  
+  --color-charcoal: #1A1E1C;
+  --color-charcoal-light: #4A524D;
+  --color-text-muted: #8E9993;
+  
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-emerald-dark);
+  color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-emerald-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #193830;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-dark);
+}
+
+/* Buttons */
+.btn-gold-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--color-gold);
+  background: transparent;
+  color: var(--color-gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-gold-outline:hover {
+  background: var(--color-gold);
+  color: var(--color-emerald-dark);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-emerald-dark);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-gold-solid:hover {
+  background: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--color-charcoal);
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-dark:hover {
+  background: var(--color-emerald-dark);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* Section styling helpers */
+.section-ivory {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+}
+
+.section-emerald {
+  background-color: var(--color-emerald-deep);
+  color: var(--color-ivory);
+}
+
+.gold-divider {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 1.25rem auto;
+}
+
+.gold-divider-left {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+  margin: 1.25rem 0;
+}
+
+/* Keyframes & Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Glassmorphism card */
+.glass-emerald {
+  background: rgba(13, 45, 37, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-gold-muted);
+}
+
+/* Utility to ensure currency display formatting */
+.price-tag {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
